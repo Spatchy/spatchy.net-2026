@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Lexend;
+  src: url(Lexend-VariableFont_wght.ttf);
+}
+
+body {
+  font-family: Lexend;
+}
+
+.spatchy-gradient {
+  background-color: #aa4cff;
+  background-image: linear-gradient(
+    to right,
+    #aa4cff,
+    #59d9dc
+  );
+}
+
+.monochrome-bg {
+  background-color: #282828;
+}
+
