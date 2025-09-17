@@ -1,5 +1,4 @@
 import type { ComponentChildren } from "preact";
-import type { CSSProperties } from "preact";
 
 export interface ButtonProps {
   id?: string;
@@ -7,29 +6,31 @@ export interface ButtonProps {
   children?: ComponentChildren;
   disabled?: boolean;
   ghost?: boolean;
-  color: CSSProperties["color"];
+  tailwindColor?: string;
 }
 
 export function Button(props: ButtonProps) {
-  const classList = ["px-2", "py-1", "rounded-md", "cursor-pointer"];
+  const classList = ["px-2", "py-2", "rounded-md", "cursor-pointer", "my-1"];
   if (props.ghost) {
     classList.push(
       "border-3",
       "border-solid",
-      `border-${props.color}`,
-      `text-${props.color}`,
-      `hover:bg-${props.color}`,
+      `border-${props.tailwindColor}`,
+      `text-${props.tailwindColor}`,
+      `hover:bg-${props.tailwindColor}`,
       "hover:text-black",
       "hover:mix-blend-screen",
-      "hover:border-transparent"
+      "hover:border-transparent",
     );
   } else {
-    classList.push(`bg-${props.color}`, `hover:bg-white`);
+    classList.push(`bg-${props.tailwindColor}`, "hover:bg-white");
   }
   return (
     <button
-      {...props}
       class={classList.join(" ")}
-    />
+      type="button"
+    >
+      { props.children }
+    </button>
   );
 }
