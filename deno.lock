@@ -8,6 +8,8 @@
     "jsr:@fresh/core@2": "2.0.2",
     "jsr:@fresh/core@^2.0.2": "2.0.2",
     "jsr:@fresh/plugin-vite@^1.0.2": "1.0.2",
+    "jsr:@preact-icons/common@^1.1.0": "1.1.0",
+    "jsr:@preact-icons/tb@^1.0.14": "1.0.14",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/dotenv@~0.225.5": "0.225.5",
     "jsr:@std/encoding@1": "1.0.10",
@@ -38,6 +40,7 @@
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.7",
     "npm:preact-render-to-string@^6.5.11": "6.6.1_preact@10.27.2",
+    "npm:preact@^10.22.1": "10.27.2",
     "npm:preact@^10.27.0": "10.27.2",
     "npm:preact@^10.27.1": "10.27.2",
     "npm:rollup@^4.50.0": "4.50.1",
@@ -102,6 +105,18 @@
         "npm:@prefresh/vite",
         "npm:rollup",
         "npm:vite@^7.1.4"
+      ]
+    },
+    "@preact-icons/common@1.1.0": {
+      "integrity": "ed191a9f88ee0e35539b8de3482d1f8a223b3f14f3b0dbfcba063c70ca4332fc",
+      "dependencies": [
+        "npm:preact@^10.22.1"
+      ]
+    },
+    "@preact-icons/tb@1.0.14": {
+      "integrity": "46e4f3edfdbefc4080714ffb18327a72257696d670d479b1108890345674a6e2",
+      "dependencies": [
+        "jsr:@preact-icons/common"
       ]
     },
     "@std/bytes@1.0.6": {
@@ -1363,10 +1378,17 @@
       "integrity": "sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw=="
     }
   },
+  "remote": {
+    "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/at.tsx": "6ec80580ffcb40ea121185ac0474d0c97d973fca101b53121ad360049e3cd70d",
+    "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/brand-github.tsx": "3e7c2e085570ebe78bf72d7ba9ad77e6519930feff5f3b653c3ba5b29b1c863b",
+    "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/brand-printables.tsx": "b508742437c901ba3dcd1035581fc3eba0da1e53c525e0e5ab924332b9255ad4",
+    "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/brand-youtube.tsx": "d6d29afa4a66ad8c1f9e1865be4940701c76e73672a2a190d79420f740831b25"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@fresh/core@^2.0.2",
       "jsr:@fresh/plugin-vite@^1.0.2",
+      "jsr:@preact-icons/tb@^1.0.14",
       "npm:@preact/signals@^2.3.1",
       "npm:@tailwindcss/vite@^4.1.12",
       "npm:preact@^10.27.1",
