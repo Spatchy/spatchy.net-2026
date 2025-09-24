@@ -1,11 +1,10 @@
 import { Head } from "fresh/runtime";
 import { define } from "../utils.ts";
 import { Button } from "../components/Button.tsx";
-import { TbBrandGithub, TbBrandYoutube, TbBrandPrintables, TbAt, TbQuestionMark } from "@preact-icons/tb";
+import LinkPanel from "../islands/LinkPanel.tsx";
 
 
-export default define.page(function Home(ctx) {
-  console.log("Shared value " + ctx.state.shared);
+export default define.page(function Home(_ctx) {
 
   return (
     <div class="min-h-screen flex flex-row">
@@ -19,24 +18,7 @@ export default define.page(function Home(ctx) {
             alt="Spatchy profile picture"
             className="rounded-full mb-20"
           />
-          <div className="flex flex-row justify-center mb-2.5">
-            <Button tailwindColor="white" circle ghost>
-              <TbBrandYoutube />
-            </Button>
-            <Button tailwindColor="white" circle ghost>
-              <TbBrandGithub />
-            </Button>
-            <Button tailwindColor="white" circle ghost>
-              <TbBrandPrintables />
-            </Button>
-            <Button tailwindColor="white" circle ghost>
-              <TbAt />
-            </Button>
-            <Button tailwindColor="white" circle ghost>
-              <TbQuestionMark />
-            </Button>
-          </div>
-          <p className="flex justify-center text-white">Placeholder</p>
+          <LinkPanel />
         </div>
       </div>
       <div className="w-2/3 spatchy-gradient flex items-center justify-center">

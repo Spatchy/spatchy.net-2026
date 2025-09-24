@@ -6,6 +6,7 @@ export interface ButtonProps {
   id?: string;
   onClick?: () => void;
   onHover?: () => void;
+  onHoverLeave?: () => void;
   children?: ComponentChildren;
   disabled?: boolean;
   ghost?: boolean;
@@ -45,7 +46,8 @@ export function Button(props: ButtonProps) {
     <button
       class={classList.join(" ")}
       type="button"
-      onMouseOver={props.onHover}
+      onMouseEnter={props.onHover}
+      onMouseLeave={props.onHoverLeave}
     >
       { props.children }
     </button>
