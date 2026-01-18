@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 
-type ButtonThemes = "spatchy" | "youtube" | "github" | "printables"
+type ButtonThemes = "spatchy" | "youtube" | "github" | "printables";
 
 export interface ButtonProps {
   id?: string;
@@ -16,7 +16,16 @@ export interface ButtonProps {
 }
 
 export function Button(props: ButtonProps) {
-  const classList = ["px-2", "py-2", "cursor-pointer", "my-1", "mx-2", "flex", "items-center", "justify-center"];
+  const classList = [
+    "px-2",
+    "py-2",
+    "cursor-pointer",
+    "my-1",
+    "mx-2",
+    "flex",
+    "items-center",
+    "justify-center",
+  ];
   if (props.ghost) {
     classList.push(
       "border-3",
@@ -49,7 +58,7 @@ export function Button(props: ButtonProps) {
       onMouseEnter={props.onHover}
       onMouseLeave={props.onHoverLeave}
     >
-      { props.children }
+      {props.children}
     </button>
   );
 }

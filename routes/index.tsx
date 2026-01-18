@@ -3,9 +3,7 @@ import { define } from "../utils.ts";
 import { Button } from "../components/Button.tsx";
 import LinkPanel from "../islands/LinkPanel.tsx";
 
-
 export default define.page(function Home(_ctx) {
-
   return (
     <div class="min-h-screen flex flex-row">
       <Head>
