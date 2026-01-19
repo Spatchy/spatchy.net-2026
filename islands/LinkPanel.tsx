@@ -22,6 +22,7 @@ export default function LinkPanel() {
           ghost
           onHover={() => hoveredLink.value = "YouTube"}
           onHoverLeave={resetHoveredLink}
+          href="https://youtube.com/@SpatchyIsOnline"
         >
           <TbBrandYoutube />
         </Button>
@@ -31,6 +32,7 @@ export default function LinkPanel() {
           ghost
           onHover={() => hoveredLink.value = "Github"}
           onHoverLeave={resetHoveredLink}
+          href="https://github.com/Spatchy"
         >
           <TbBrandGithub />
         </Button>
@@ -40,6 +42,7 @@ export default function LinkPanel() {
           ghost
           onHover={() => hoveredLink.value = "Printables"}
           onHoverLeave={resetHoveredLink}
+          href="https://www.printables.com/@Spatchy_1649691"
         >
           <TbBrandPrintables />
         </Button>
@@ -49,6 +52,7 @@ export default function LinkPanel() {
           ghost
           onHover={() => hoveredLink.value = "Email"}
           onHoverLeave={resetHoveredLink}
+          href="mailto:spatchy@spatchy.net"
         >
           <TbAt />
         </Button>

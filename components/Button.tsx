@@ -13,6 +13,7 @@ export interface ButtonProps {
   tailwindColor?: string;
   theme?: ButtonThemes;
   circle?: boolean;
+  href?: string;
 }
 
 export function Button(props: ButtonProps) {
@@ -49,6 +50,20 @@ export function Button(props: ButtonProps) {
     classList.push("rounded-full", "w-10", "h-10");
   } else {
     classList.push("rounded-md");
+  }
+
+  // If href is set, return a link (styled like a button) instead
+  if (props.href) {
+    return (
+      <a
+        class={classList.join(" ")}
+        onMouseEnter={props.onHover}
+        onMouseLeave={props.onHoverLeave}
+        href={props.href}
+      >
+        {props.children}
+      </a>
+    );
   }
 
   return (
