@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><linearGradient
+       id="linearGradient16"><stop
+         style="stop-color:#aa4cff;stop-opacity:1;"
+         offset="0"
+         id="stop16" /><stop
+         style="stop-color:#59d9dc;stop-opacity:1;"
+         offset="1"
+         id="stop17" /></linearGradient><linearGradient
+       xlink:href="#linearGradient16"
+       id="linearGradient17"
+       x1="7125.4502"
+       y1="256"
+       x2="7637.4502"
+       y2="256"
+       gradientUnits="userSpaceOnUse" /></defs><g
+     id="layer1"
+     transform="translate(-7125.4503)"><rect
+       style="fill:url(#linearGradient17);stroke-width:10"
+       id="rect16"
+       width="512"
+       height="512"
+       x="7125.4502"
+       y="0"
+       rx="40"
+       ry="40" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:600px;font-family:Lexend;-inkscape-font-specification:Lexend;text-align:start;letter-spacing:-16.5px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:10"
+       x="7195.7505"
+       y="466.00024"
+       id="text18"><tspan
+         id="tspan18"
+         x="7195.7505"
+         y="466.00024"
+         style="font-size:600px;fill:#ffffff;fill-opacity:1">S</tspan></text></g></svg>
