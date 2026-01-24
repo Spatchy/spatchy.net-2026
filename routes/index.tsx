@@ -2,6 +2,7 @@ import { Head } from "fresh/runtime";
 import { define } from "../utils.ts";
 import { Button } from "../components/Button.tsx";
 import LinkPanel from "../islands/LinkPanel.tsx";
+import Feed from "../islands/Feed.tsx";
 
 export default define.page(function Home(_ctx) {
   return (
@@ -31,6 +32,7 @@ export default define.page(function Home(_ctx) {
             developer, and creator.
           </p>
           <Button tailwindColor="white" ghost>View my projects</Button>
+          <Feed></Feed>
         </div>
       </div>
     </div>
