@@ -5,8 +5,8 @@ import {
   TbBrandYoutube,
   TbQuestionMark,
 } from "@preact-icons/tb";
-import { Button } from "../components/Button.tsx";
 import { useSignal } from "@preact/signals";
+import Button from "../components/Button.tsx";
 
 export default function LinkPanel() {
   const hoveredLink = useSignal("-");
@@ -20,8 +20,8 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onHover={() => hoveredLink.value = "YouTube"}
-          onHoverLeave={resetHoveredLink}
+          onMouseEnter={() => hoveredLink.value = "YouTube"}
+          onMouseLeave={resetHoveredLink}
           href="https://youtube.com/@SpatchyIsOnline"
         >
           <TbBrandYoutube />
@@ -30,8 +30,8 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onHover={() => hoveredLink.value = "Github"}
-          onHoverLeave={resetHoveredLink}
+          onMouseEnter={() => hoveredLink.value = "Github"}
+          onMouseLeave={resetHoveredLink}
           href="https://github.com/Spatchy"
         >
           <TbBrandGithub />
@@ -40,8 +40,8 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onHover={() => hoveredLink.value = "Printables"}
-          onHoverLeave={resetHoveredLink}
+          onMouseEnter={() => hoveredLink.value = "Printables"}
+          onMouseLeave={resetHoveredLink}
           href="https://www.printables.com/@Spatchy_1649691"
         >
           <TbBrandPrintables />
@@ -50,8 +50,8 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onHover={() => hoveredLink.value = "Email"}
-          onHoverLeave={resetHoveredLink}
+          onMouseEnter={() => hoveredLink.value = "Email"}
+          onMouseLeave={resetHoveredLink}
           href="mailto:spatchy@spatchy.net"
         >
           <TbAt />
@@ -60,8 +60,8 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onHover={() => hoveredLink.value = "About"}
-          onHoverLeave={resetHoveredLink}
+          onMouseEnter={() => hoveredLink.value = "About"}
+          onMouseLeave={resetHoveredLink}
         >
           <TbQuestionMark />
         </Button>

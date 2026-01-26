@@ -1,22 +1,20 @@
-import type { ComponentChildren } from "preact";
+import type { ComponentChildren, MouseEventHandler } from "preact";
 
 type ButtonThemes = "spatchy" | "youtube" | "github" | "printables";
 
 export interface ButtonProps {
-  id?: string;
-  onClick?: () => void;
-  onHover?: () => void;
-  onHoverLeave?: () => void;
   children?: ComponentChildren;
-  disabled?: boolean;
   ghost?: boolean;
   tailwindColor?: string;
   theme?: ButtonThemes;
   circle?: boolean;
+  onMouseEnter?: MouseEventHandler<Element>
+  onMouseLeave?: MouseEventHandler<Element>
+  onClick?: MouseEventHandler<Element>
   href?: string;
 }
 
-export function Button(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
   const classList = [
     "px-2",
     "py-2",
@@ -57,8 +55,8 @@ export function Button(props: ButtonProps) {
     return (
       <a
         class={classList.join(" ")}
-        onMouseEnter={props.onHover}
-        onMouseLeave={props.onHoverLeave}
+        onMouseEnter={props.onMouseEnter}
+        onMouseLeave={props.onMouseLeave}
         href={props.href}
       >
         {props.children}
@@ -70,8 +68,9 @@ export function Button(props: ButtonProps) {
     <button
       class={classList.join(" ")}
       type="button"
-      onMouseEnter={props.onHover}
-      onMouseLeave={props.onHoverLeave}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+      onClick={props.onClick}
     >
       {props.children}
     </button>
