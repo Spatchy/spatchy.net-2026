@@ -13,3 +13,6 @@ vendor/
 
 # direnv
 .direnv
+
+# Demo feed
+demo-feed.xml
