@@ -9,7 +9,7 @@ export default define.page(function Home(_ctx) {
       <Head>
         <title>Spatchy</title>
       </Head>
-      <div class="monochrome-bg w-1/3 min-h-screen flex items-center justify-center">
+      <div class="w-1/3 min-h-screen flex items-center justify-center bg-spatchy-monochrome">
         <div className="flex flex-col max-w-[90%] mx-auto">
           <img
             src="/all-rights-reserved/profile-photo-500x500.png"

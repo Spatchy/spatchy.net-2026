@@ -18,7 +18,7 @@ body {
   );
 }
 
-.monochrome-bg {
-  background-color: #282828;
+@theme {
+  --color-spatchy-monochrome: #282828;
+  --color-spatchy-duotone: #393939;
 }
-
