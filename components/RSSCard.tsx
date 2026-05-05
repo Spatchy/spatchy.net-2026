@@ -56,7 +56,7 @@ export default function RSSCard(props: RSSCardProps) {
         class="w-full aspect-video object-cover block"
       />
 
-      <div class="flex flex-col flex-1 gap-2 p-4">
+      <div class="flex flex-col flex-1 gap-2 py-4 px-2">
         <h3 class="text-sm font-semibold leading-snug text-zinc-900 line-clamp-2">
           {title}
         </h3>

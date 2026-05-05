@@ -1,0 +1,82 @@
+.dynamic-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel {
+  z-index: 1;
+
+  height: 100vh;
+  overflow: hidden;
+
+  position: fixed;
+  width: inherit;
+
+  transition:
+    height 0.65s cubic-bezier(0.77, 0, 0.18, 1),
+    box-shadow 0.65s ease;
+}
+
+.hero-panel.collapsed {
+  height: 64px;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.18);
+}
+
+.hero-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-panel.collapsed .hero-body {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.97);
+  pointer-events: none;
+}
+
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.3s ease 0.35s,
+    transform 0.3s ease 0.35s;
+  pointer-events: none;
+}
+
+.hero-panel.collapsed .hero-nav {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hero-nav__logo {
+  height: 28px;
+  width: auto;
+}
+
+@keyframes feed-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
