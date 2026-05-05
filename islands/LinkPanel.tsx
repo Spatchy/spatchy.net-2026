@@ -3,7 +3,7 @@ import {
   TbBrandGithub,
   TbBrandPrintables,
   TbBrandYoutube,
-  TbRss
+  TbRss,
 } from "@preact-icons/tb";
 import { useSignal } from "@preact/signals";
 import Button from "../components/Button.tsx";
@@ -12,6 +12,17 @@ export default function LinkPanel() {
   const hoveredLink = useSignal("-");
 
   const resetHoveredLink = () => hoveredLink.value = "-";
+
+  const feedUrl = Deno.env.get("FRESH_PUBLIC_RSS_FEED_URL");
+
+  if (!feedUrl) {
+    throw new Error("Error - RSS_FEED_URL environment variable not set");
+  }
+
+  const copyRSSFeed = () => {
+    navigator.clipboard.writeText(feedUrl);
+    hoveredLink.value = "Copied!";
+  }
 
   return (
     <>
@@ -62,6 +73,7 @@ export default function LinkPanel() {
           ghost
           onMouseEnter={() => hoveredLink.value = "Copy RSS Feed"}
           onMouseLeave={resetHoveredLink}
+          onClick={copyRSSFeed}
         >
           <TbRss />
         </Button>
