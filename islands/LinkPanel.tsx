@@ -3,7 +3,7 @@ import {
   TbBrandGithub,
   TbBrandPrintables,
   TbBrandYoutube,
-  TbQuestionMark,
+  TbRss
 } from "@preact-icons/tb";
 import { useSignal } from "@preact/signals";
 import Button from "../components/Button.tsx";
@@ -60,10 +60,10 @@ export default function LinkPanel() {
           tailwindColor="white"
           circle
           ghost
-          onMouseEnter={() => hoveredLink.value = "About"}
+          onMouseEnter={() => hoveredLink.value = "Copy RSS Feed"}
           onMouseLeave={resetHoveredLink}
         >
-          <TbQuestionMark />
+          <TbRss />
         </Button>
       </div>
       <p
