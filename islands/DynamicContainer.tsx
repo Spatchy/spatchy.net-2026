@@ -3,9 +3,15 @@ import Button from "../components/Button.tsx";
 import Feed from "./Feed.tsx";
 import { parseFeed } from "@mikaelporttila/rss";
 
+const feedUrl = Deno.env.get("FRESH_PUBLIC_RSS_FEED_URL");
+
+if(!feedUrl){
+  throw new Error("Error - RSS_FEED_URL environment variable not set");
+}
+
 // TODO: This should probably be made async
 const response = await fetch(
-  "http://127.0.0.1:5173/demo-feed.xml", // TODO: Change this so it works in prod!!
+  feedUrl
 );
 const xml = await response.text();
 const feedData = await parseFeed(xml);
