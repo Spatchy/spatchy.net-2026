@@ -1,6 +1,12 @@
 import type { FeedEntry } from "@mikaelporttila/rss";
 import { RelativeDateFormatter } from "./util/relDateFormatter.ts";
 import { decodeHtmlEntities } from "./util/decodeHTMLEntities.ts";
+import {
+  TbBrandGithub,
+  TbBrandYoutube,
+  TbWorld
+} from "@preact-icons/tb";
+import { VNode } from "preact";
 
 export interface RSSCardProps {
   feedEntry: FeedEntry;
@@ -10,22 +16,22 @@ export interface RSSCardProps {
 const CATEGORY_STYLES: Record<string, {
   accentBar: string;
   accentIcon: string;
-  accentDot: string;
+  icon: VNode<unknown>
 }> = {
   "default": {
-    accentBar: "bg-stone-400",
+    accentBar: "border-stone-400",
     accentIcon: "text-stone-400",
-    accentDot: "bg-stone-400",
+    icon: <TbWorld />,
   },
   "youtube/videos": {
-    accentBar: "bg-rose-700",
+    accentBar: "border-rose-700",
     accentIcon: "text-rose-700",
-    accentDot: "bg-rose-700",
+    icon: <TbBrandYoutube />,
   },
   "github/repos": {
-    accentBar: "bg-indigo-900",
+    accentBar: "border-indigo-900",
     accentIcon: "text-indigo-900",
-    accentDot: "bg-indigo-900",
+    icon: <TbBrandGithub />,
   },
 };
 
@@ -48,7 +54,7 @@ export default function RSSCard(props: RSSCardProps) {
 
   const card = (
     <div class="w-64 flex h-full flex-col rounded-xl overflow-hidden transition-colors bg-zinc-50 border-4 border-zinc-50">
-      <div class={`h-1 w-full ${styles.accentBar}`} />
+      {/* <div class={`h-1 w-full ${styles.accentBar}`} /> */}
 
       <img
         src={imageSrc}
@@ -64,11 +70,11 @@ export default function RSSCard(props: RSSCardProps) {
           {description}
         </p>
 
-        <div class="flex items-center justify-between mt-auto pt-3 border-t border-zinc-500">
+        <div class={`flex items-center justify-between mt-auto pt-3 border-t ${styles.accentBar}`}>
           <span class="font-mono text-xs text-zinc-500">
             {date}
           </span>
-          <span class={`w-2 h-2 rounded-full ${styles.accentDot}`} />
+          <span class={`text-l ${styles.accentIcon}`}>{styles.icon}</span>
         </div>
       </div>
     </div>
