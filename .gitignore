@@ -15,4 +15,4 @@ vendor/
 .direnv
 
 # Demo feed
-demo-feed.xml
+feed.xml

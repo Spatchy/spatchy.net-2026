@@ -2,24 +2,22 @@ import { useSignal } from "@preact/signals";
 import Button from "../components/Button.tsx";
 import Feed from "./Feed.tsx";
 import { parseFeed } from "@mikaelporttila/rss";
-
-const feedUrl = Deno.env.get("FRESH_PUBLIC_RSS_FEED_URL");
-
-if(!feedUrl){
-  throw new Error("Error - RSS_FEED_URL environment variable not set");
-}
-
-// TODO: This should probably be made async
-const response = await fetch(
-  feedUrl
-);
-const xml = await response.text();
-const feedData = await parseFeed(xml);
-const imageUrls = feedData.entries.map((e) => e.attachments?.[0].url);
+import type { Feed as FeedType } from "@mikaelporttila/rss";
+import { useEffect, useState } from "preact/hooks";
 
 export default function DynamicContainer() {
   const collapsed = useSignal<boolean>(false);
   const showFeed = useSignal<boolean>(false);
+  const [feedData, setFeedData] = useState<FeedType>();
+
+  useEffect(() => {
+    fetch("/api/feed")
+      .then(r => r.text())
+      .then(parseFeed)
+      .then(setFeedData);
+  }, []);
+  
+  const imageUrls = feedData?.entries.map((e) => e.attachments?.[0].url);
 
   function handleViewProjects() {
     collapsed.value = true;
@@ -33,10 +31,9 @@ export default function DynamicContainer() {
           collapsed.value ? " collapsed" : ""
         }`}
       >
-
         {/* Preload all the images before the feed is shown */}
         <div aria-hidden="true" class="preload-cache">
-          {imageUrls.map((url, i) => <img key={i} src={url} />)}
+          {imageUrls?.map((url, i) => <img key={i} src={url} />)}
         </div>
 
         <div class="hero-body">
@@ -67,7 +64,7 @@ export default function DynamicContainer() {
         </nav>
       </div>
 
-      {showFeed.value && <Feed feedData={feedData} />}
+      {showFeed.value && <Feed feedData={feedData!} />}
     </div>
   );
 }
