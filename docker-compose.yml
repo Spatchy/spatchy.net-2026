@@ -1,0 +1,13 @@
+name: spatchy.net
+services:
+  spatchy.net:
+    image: spatchy.net
+    ports:
+      - 8000:8000
+    volumes:
+      - ./static/feed-data:/app/static/feed-data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - FRESH_PUBLIC_RSS_FEED_URL=http://localhost:8000/feed-data/demo-feed.xml

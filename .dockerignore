@@ -1,0 +1,7 @@
+.env
+.envrc
+.direnv
+.vscode
+README.md
+flake.nix
+flake.lock
