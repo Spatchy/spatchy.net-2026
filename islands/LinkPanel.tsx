@@ -13,11 +13,7 @@ export default function LinkPanel() {
 
   const resetHoveredLink = () => hoveredLink.value = "-";
 
-  const feedUrl = Deno.env.get("FRESH_PUBLIC_RSS_FEED_URL");
-
-  if (!feedUrl) {
-    throw new Error("Error - RSS_FEED_URL environment variable not set");
-  }
+  const feedUrl = "https://spatchy.net/api/feed"
 
   const copyRSSFeed = () => {
     navigator.clipboard.writeText(feedUrl);
