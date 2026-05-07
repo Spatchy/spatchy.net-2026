@@ -22,7 +22,7 @@ export default function LinkPanel() {
 
   return (
     <>
-      <div className="flex flex-row justify-center mb-2.5">
+      <div className="flex flex-col md:flex-row justify-center items-center md:mb-2.5">
         <Button
           tailwindColor="white"
           circle
@@ -75,7 +75,7 @@ export default function LinkPanel() {
         </Button>
       </div>
       <p
-        className={`flex justify-center text-white ${
+        className={`md:flex justify-center text-white hidden ${
           hoveredLink.value === "-" ? "invisible" : ""
         }`}
       >

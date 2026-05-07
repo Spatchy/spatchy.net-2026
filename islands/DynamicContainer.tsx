@@ -4,6 +4,7 @@ import Feed from "./Feed.tsx";
 import { parseFeed } from "@mikaelporttila/rss";
 import type { Feed as FeedType } from "@mikaelporttila/rss";
 import { useEffect, useState } from "preact/hooks";
+import FlavourParagraph from "../components/FlavourParagraph.tsx";
 
 export default function DynamicContainer() {
   const collapsed = useSignal<boolean>(false);
@@ -25,7 +26,7 @@ export default function DynamicContainer() {
   }
 
   return (
-    <div class="w-2/3 dynamic-wrapper">
+    <div class="w-full md:w-2/3 dynamic-wrapper flex-row">
       <div
         class={`hero-panel spatchy-gradient${
           collapsed.value ? " collapsed" : ""
@@ -42,10 +43,14 @@ export default function DynamicContainer() {
             src="/all-rights-reserved/wordmark-white.svg"
             alt="The Spatchy logo"
           />
-          <p class="my-4 text-white text-lg">
-            I am an open source and right to repair advocate, full stack
-            developer, and creator.
-          </p>
+          <img
+            src="/all-rights-reserved/profile-photo-500x500.png"
+            alt="Spatchy profile picture"
+            className="rounded-full md:hidden border-6 border-spatchy-monochrome max-w-[50%]"
+          />
+          <div class="md:contents mb-3">
+            <FlavourParagraph/>
+          </div>
           <Button
             tailwindColor="white"
             ghost
@@ -63,7 +68,6 @@ export default function DynamicContainer() {
           />
         </nav>
       </div>
-
       {showFeed.value && <Feed feedData={feedData!} />}
     </div>
   );
