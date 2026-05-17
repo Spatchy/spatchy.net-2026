@@ -18,6 +18,15 @@ body {
   );
 }
 
+.model-background-gradient {
+  background-color: #282828;
+  background-image: linear-gradient(
+    to top,
+    #282828,
+    #505050
+  );
+}
+
 .preload-cache {
   position: absolute;
   width: 1px;

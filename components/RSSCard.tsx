@@ -4,6 +4,7 @@ import { decodeHtmlEntities } from "./util/decodeHTMLEntities.ts";
 import {
   TbBrandGithub,
   TbBrandYoutube,
+  TbBrandPrintables,
   TbWorld
 } from "@preact-icons/tb";
 import { VNode } from "preact";
@@ -33,6 +34,11 @@ const CATEGORY_STYLES: Record<string, {
     accentIcon: "text-indigo-900",
     icon: <TbBrandGithub />,
   },
+  "printables/models": {
+    accentBar: "border-orange-500",
+    accentIcon: "text-orange-500",
+    icon: <TbBrandPrintables />
+  }
 };
 
 export default function RSSCard(props: RSSCardProps) {
@@ -50,7 +56,9 @@ export default function RSSCard(props: RSSCardProps) {
     ? relativeTimeFormatter.getRelTime(rss.updated)
     : "No date";
 
-  const styles = CATEGORY_STYLES[category];
+  const styles = CATEGORY_STYLES[category] ?? CATEGORY_STYLES.default;
+
+  const backgroundString = category === "printables/models" ? "model-background-gradient" : ""
 
   const card = (
     <div class="w-64 flex h-full flex-col rounded-xl overflow-hidden transition-colors bg-zinc-50 border-4 border-zinc-50">
@@ -59,7 +67,7 @@ export default function RSSCard(props: RSSCardProps) {
       <img
         src={imageSrc}
         alt=""
-        class="w-full aspect-video object-cover block"
+        class={`w-full aspect-video object-cover block ${backgroundString}`}
       />
 
       <div class="flex flex-col flex-1 gap-2 py-4 px-2">
